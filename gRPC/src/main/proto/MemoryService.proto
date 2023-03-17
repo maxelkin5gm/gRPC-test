@@ -1,0 +1,12 @@
+syntax = "proto3";
+package org.example.gRPC;
+
+message MemoryRequest {}
+
+message MemoryResponse {
+  int64 memory = 1;
+}
+
+service MemoryService {
+  rpc memory(MemoryRequest) returns (MemoryResponse);
+}

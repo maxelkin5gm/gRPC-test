@@ -1,0 +1,17 @@
+syntax = "proto3";
+package org.example.gRPC;
+
+message WebCamRequest {
+  int32 webCamNumber = 1;
+}
+
+message WebCamResponse {
+  bytes data = 1;
+  int32 rows = 2;
+  int32 cols = 3;
+  int32 type = 4;
+}
+
+service WebCamService {
+  rpc videoStream(WebCamRequest) returns (stream WebCamResponse);
+}
